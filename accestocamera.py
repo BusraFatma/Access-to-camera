@@ -2,24 +2,28 @@ import cv2
 
 soltık = cv2.EVENT_LBUTTONDOWN
 sagtık = cv2.EVENT_RBUTTONDOWN
+ortatık= cv2.EVENT_MBUTTONDOWN
 kayıt = cv2.VideoCapture(0)
 font = cv2.FONT_HERSHEY_SIMPLEX
 
 
 
 def kareçizme(a,s,d,f,g):
-    global q,w
+    global q,w,b
     if a == soltık:
         q = (s,d)
         
     if a == sagtık:
         w = (s,d)
         
+    if a== ortatık :
+        b = =(s,d)
 
         
         
 q = (0,0)
 w = (0,0)
+b = (0,0)
 
 r = True
 
@@ -33,6 +37,7 @@ while True:
     cv2.rectangle(x,q,w,(0,255,255),2)
     cv2.putText(x,"A",q,font,1,(255,0,0),2,cv2.LINE_4)
     cv2.putText(x,"B",w,font,1,(255,0,0),2,cv2.LINE_4)
+    cv2.putText(x,"C",B,font,1,(255,0,0),2,cv2.LINE_4)
 
 
 
